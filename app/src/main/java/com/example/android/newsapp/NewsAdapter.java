@@ -78,6 +78,9 @@ public class NewsAdapter extends ArrayAdapter<News> {
      * Return the formatted date string (i.e. "Mar 3, 1984") from a Date object.
      */
     private String formatDate(Date dateObject) {
+        if (dateObject == null) {
+            return "";
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
         return dateFormat.format(dateObject);
     }
@@ -86,6 +89,9 @@ public class NewsAdapter extends ArrayAdapter<News> {
      * Return the formatted date string (i.e. "4:30 PM") from a Date object.
      */
     private String formatTime(Date dateObject) {
+        if (dateObject == null) {
+            return "";
+        }
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(dateObject);
     }

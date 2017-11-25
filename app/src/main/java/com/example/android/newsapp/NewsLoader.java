@@ -2,6 +2,7 @@ package com.example.android.newsapp;
 
 import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.net.Uri;
 
 import java.util.List;
 
@@ -17,9 +18,17 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
     /** Query URL */
     private String mUrl;
 
-    public NewsLoader(Context context, String mUrl) {
+    public NewsLoader(Context context, String endPoint, String pageSize, String orderBy) {
         super(context);
-        this.mUrl = mUrl;
+
+        Uri baseUri = Uri.parse(endPoint);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("page-size", pageSize);
+        uriBuilder.appendQueryParameter("order-by", orderBy);
+        uriBuilder.appendQueryParameter("api-key", "test");
+
+        this.mUrl = uriBuilder.toString();
     }
 
     @Override

@@ -127,15 +127,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 getString(R.string.settings_order_by_default)
         );
 
-        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
-        Uri.Builder uriBuilder = baseUri.buildUpon();
-
-        //uriBuilder.appendQueryParameter("section", "technology");
-        uriBuilder.appendQueryParameter("page-size", pageSize);
-        uriBuilder.appendQueryParameter("order-by", orderBy);
-        uriBuilder.appendQueryParameter("api-key", "test");
-
-        return new NewsLoader(this, uriBuilder.toString());
+        return new NewsLoader(this, GUARDIAN_REQUEST_URL, pageSize, orderBy);
     }
 
     @Override

@@ -10,12 +10,6 @@
 
     <string name="no_news">No news found.</string>
 
-    <!--<string name="settings_total_results_label">Total Results</string>-->
-
-    <!--<string name="settings_total_results_key" translatable="false">total_results</string>-->
-
-    <!--<string name="settings_total_results_default" translatable="false">10</string>-->
-
     <string name="settings_total_results">Total Results</string>
     <string name="settings_total_results_key" translatable="false">total_results</string>
     <string name="settings_total_results_default" translatable="false">10</string>

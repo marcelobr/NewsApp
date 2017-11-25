@@ -154,16 +154,16 @@ public class QueryUtils {
                 JSONObject currentNews = resultsArray.getJSONObject(i);
 
                 // Extract the value for the key called "webTitle"
-                String webTitle = currentNews.getString("webTitle");
+                String webTitle = currentNews.optString("webTitle");
 
                 // Extract the value for the key called "sectionName"
-                String sectionName = currentNews.getString("sectionName");
+                String sectionName = currentNews.optString("sectionName");
 
                 // Extract the value for the key called "webUrl"
-                String webUrl = currentNews.getString("webUrl");
+                String webUrl = currentNews.optString("webUrl");
 
                 // Extract the value for the key called "webPublicationDate"
-                String webPublicationDate = currentNews.getString("webPublicationDate");
+                String webPublicationDate = currentNews.optString("webPublicationDate");
 
                 // Create a new {@link News} object with the webTitle, sectionName, webUrl,
                 // and webPublicationDate from the JSON response.
