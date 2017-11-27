@@ -12,10 +12,14 @@ import java.util.List;
 
 public class NewsLoader extends AsyncTaskLoader<List<News>> {
 
-    /** Tag for log messages */
+    /**
+     * Tag for log messages
+     */
     private static final String LOG_TAG = NewsLoader.class.getName();
 
-    /** Query URL */
+    /**
+     * Query URL
+     */
     private String mUrl;
 
     public NewsLoader(Context context, String endPoint, String pageSize, String orderBy) {
@@ -24,9 +28,10 @@ public class NewsLoader extends AsyncTaskLoader<List<News>> {
         Uri baseUri = Uri.parse(endPoint);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
-        uriBuilder.appendQueryParameter("page-size", pageSize);
-        uriBuilder.appendQueryParameter("order-by", orderBy);
-        uriBuilder.appendQueryParameter("api-key", "test");
+        uriBuilder.appendQueryParameter(getContext().getString(R.string.request_parameter_page_size), pageSize);
+        uriBuilder.appendQueryParameter(getContext().getString(R.string.request_parameter_order_by), orderBy);
+        uriBuilder.appendQueryParameter(getContext().getString(R.string.request_parameter_api_key),
+                getContext().getString(R.string.request_parameter_api_key_value));
 
         this.mUrl = uriBuilder.toString();
     }

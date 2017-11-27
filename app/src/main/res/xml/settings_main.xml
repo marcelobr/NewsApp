@@ -19,11 +19,4 @@
         android:positiveButtonText="@null"
         android:title="@string/settings_total_results" />
 
-    <!--<EditTextPreference-->
-        <!--android:defaultValue="@string/settings_total_results_default"-->
-        <!--android:inputType="numberDecimal"-->
-        <!--android:key="@string/settings_total_results_key"-->
-        <!--android:selectAllOnFocus="true"-->
-        <!--android:title="@string/settings_total_results_label" />-->
-
 </PreferenceScreen>
