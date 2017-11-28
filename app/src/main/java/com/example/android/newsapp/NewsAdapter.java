@@ -48,7 +48,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         // Create a new Date object from the time of the web publication date
         TimeZone tz = TimeZone.getTimeZone("UTC");
-        //DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         df.setTimeZone(tz);
         Date dateObject = null;
